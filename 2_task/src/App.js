@@ -21,22 +21,11 @@ class App extends Component {
     ],
   };
   render() {
-    return (
-      <div class="styler">
-        <Animal
-          name={this.state.animals[0].name}
-          img={this.state.animals[0].img}
-        />
-        <Animal
-          name={this.state.animals[1].name}
-          img={this.state.animals[1].img}
-        />
-        <Animal
-          name={this.state.animals[2].name}
-          img={this.state.animals[2].img}
-        />
-      </div>
-    );
+    const animalsList = this.state.animals.map((animal) => {
+      return <Animal name={animal.name} img={animal.img} />;
+    });
+
+    return <div class="styler">{animalsList}</div>;
   }
 }
 
